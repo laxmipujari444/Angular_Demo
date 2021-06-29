@@ -1,0 +1,12 @@
+<div class="parent">
+	<h1>Teacher</h1>
+	<hr />
+	Enter a Message:
+	<input type="text" [(ngModel)]="message">
+	<br><br>
+
+	<button class="button_slide slide_down" (click)="sendMsg()" class="btn3">Send Message To Student</button>
+
+	<p>Message from Student=>> <b>{{parentMessage}}</b></p>
+	<app-child (messageEvent)="receiveMessage($event)" [childMessage]="childMessage"></app-child>
+</div>

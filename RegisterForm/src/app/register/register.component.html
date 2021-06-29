@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+    <span>Employee Registration</span>
+</mat-toolbar>
+
+<mat-card class="my-card">
+
+    <form [formGroup]="registerForm" (submit)="submit()" class="my-form">
+
+    <mat-card-content>
+        <mat-form-field class="full-width">
+            <mat-label>Employee Name :</mat-label>
+            <input matInput formControlName="name" placeholder="Enter Full Name">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Designation :</mat-label>
+            <mat-select formControlName="designation" placeholder="Select Designation">
+
+                <mat-option value="Civil Engineer">Civil Engineer</mat-option>
+                <mat-option value="Software Engineer">Software Engineer</mat-option>
+                <mat-option value="etc">etc</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Email :</mat-label>
+            <input matInput formControlName="email" placeholder="Email Address">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Phone Number :</mat-label>
+            <input matInput formControlName="phonenumber" placeholder="10 Digit Phone Number">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <section class="example-section">
+            <label class="example-margin">Gender:</label>
+            <mat-radio-group formControlName="gender">
+                <mat-radio-button class="example-margin" value="Male">
+                    Male
+                </mat-radio-button>
+                <mat-radio-button class="example-margin" value="Female">
+                    Female
+                </mat-radio-button>
+                <mat-radio-button class="example-margin" value="Other">
+                    Other
+                </mat-radio-button>
+            </mat-radio-group>
+        </section>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-flat-button color="primary" type="submit" [disabled]="registerForm.invalid"
+            color="primary">Submit</button>
+    </mat-card-actions>
+    </form>
+</mat-card>

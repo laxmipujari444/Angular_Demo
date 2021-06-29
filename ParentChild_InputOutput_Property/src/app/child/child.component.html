@@ -1,0 +1,13 @@
+<hr />
+<div class="parent">
+    <h1>Student</h1>
+    <hr>
+    <br>
+    Enter a Message:
+    <input type="text" [(ngModel)]="parentMessage">
+    <br><br>
+    <button (click)="sendMsgToTeacher()" class="btn3">Send Message To Teacher</button>
+
+
+    <p>Message from Teacher=>> <b>{{childMessage}}</b></p>
+</div>
